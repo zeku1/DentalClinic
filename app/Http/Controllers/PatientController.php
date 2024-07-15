@@ -14,7 +14,11 @@ class PatientController extends Controller
      */
     public function index()
     {
-        //
+        $patients = Patient::all();
+
+        return view('admin_patients',[
+            'patients' => $patients
+        ]);
     }
 
     /**
@@ -22,7 +26,7 @@ class PatientController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin_add_patient');
     }
 
     /**
@@ -39,26 +43,18 @@ class PatientController extends Controller
             'email' => 'required|email',
         ]);
 
+        $patient = Patient::where('first_name', $validatedData['first_name'])
+                            ->where('last_name', $validatedData['last_name'])
+                            ->first();
+
+        if($patient){
+            return redirect()->route('admin.patients')
+                ->with(['error' => 'There is a Patient with similar records']);
+        }
+
         $patient = Patient::create($validatedData);
 
-        $validateAppointment = $request->validate([
-            'services.*' => 'required',
-            'appointment_date' => 'required',
-            'appointment_time' => 'required',
-        ]);
-
-        $procedures = implode(", ", $request->input('services'));
-
-        Appointments::create([
-            'patient_id' => $patient->id,
-            'procedures' => $procedures,
-            'appointment_date' => $validateAppointment['appointment_date'],
-            'appointment_time' => $validateAppointment['appointment_time'],
-            'finished' => 'false',
-            'approved' => 'false',
-        ]);
-
-        return view('dashboard');
+        return redirect()->route('admin.patients')->with(['message' => 'Patient added successfully']);
     }
 
     /**
@@ -74,7 +70,10 @@ class PatientController extends Controller
      */
     public function edit(Patient $patient)
     {
-        //
+        // dd($patient);
+        return view('admin_edit_patient',[
+            'patient' => $patient
+        ]);
     }
 
     /**
@@ -82,7 +81,20 @@ class PatientController extends Controller
      */
     public function update(Request $request, Patient $patient)
     {
-        //
+        $validatedData = $request->validate([
+            'first_name' => 'required|string',
+            'last_name' => 'required|string',
+            'age' => 'required|integer',
+            'number' => 'required|string',
+            'address' => 'required|string',
+            'email' => 'required|email',
+        ]);
+
+        $patient->updateOrFail($validatedData);
+
+
+        return redirect()->route('admin.patients')->with(['message' => 'Patient added successfully']);
+
     }
 
     /**

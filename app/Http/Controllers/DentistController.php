@@ -12,7 +12,11 @@ class DentistController extends Controller
      */
     public function index()
     {
-        //
+        $dentists = Dentist::all();
+
+        return view('admin_dentist', [
+            'dentists' => $dentists
+        ]);
     }
 
     /**
@@ -20,7 +24,7 @@ class DentistController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin_add_dentist');
     }
 
     /**
@@ -28,7 +32,24 @@ class DentistController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'first_name' => 'required|string',
+            'last_name' => 'required|string',
+            'title' => 'required|string'
+        ]);
+
+        $dentist = Dentist::where('first_name', $validatedData['first_name'])
+            ->where('last_name', $validatedData['last_name'])
+            ->first();
+
+        if ($dentist) {
+            return redirect()->route('admin.dentists')
+                ->with(['error' => 'There is a Dentist with similar records']);
+        }
+
+        $dentist = Dentist::create($validatedData);
+
+        return redirect()->route('admin.dentists')->with(['message' => 'Dentist added successfully']);
     }
 
     /**
@@ -44,7 +65,9 @@ class DentistController extends Controller
      */
     public function edit(Dentist $dentist)
     {
-        //
+        return view('admin_edit_dentist',[
+            'dentist' => $dentist
+        ]);
     }
 
     /**
@@ -52,7 +75,15 @@ class DentistController extends Controller
      */
     public function update(Request $request, Dentist $dentist)
     {
-        //
+        $validatedData = $request->validate([
+            'first_name' => 'required|string',
+            'last_name' => 'required|string',
+            'title' => 'required|string'
+        ]);
+
+        $dentist->update($validatedData);
+
+        return redirect()->route('admin.dentists')->with(['message' => 'Dentist edited successfully']);
     }
 
     /**

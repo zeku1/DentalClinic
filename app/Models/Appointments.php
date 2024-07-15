@@ -24,4 +24,10 @@ class Appointments extends Model
         return $this->belongsTo(Patient::class,'patient_id');
     }
 
+    public function procedures()
+    {
+        return $this->belongsToMany(Procedure::class, 'appointment_procedures')
+                    ->withTimestamps();
+    }
+
 }

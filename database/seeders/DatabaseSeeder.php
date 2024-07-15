@@ -20,5 +20,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@dentalclinic.com',
             'password' => 'admin123'
         ]);
+
+        $this->call(ProceduresTableSeeder::class);
     }
 }

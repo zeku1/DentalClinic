@@ -35,7 +35,7 @@
 }
 
 html{
-    font-size: 62.5%;
+    /* font-size: 62.5%; */
     overflow-x: hidden;
     scroll-behavior: smooth;
     scroll-padding-top: 6.5rem;
@@ -47,7 +47,6 @@ section{
 
 .heading{
     text-align: center;
-    font-size: 4rem;
     color: var(--black);
     text-transform: uppercase;
     font-weight: bolder;
@@ -55,57 +54,107 @@ section{
     background-color: var(--light-bg);
 }
 
-.link-btn{
-    display: inline-block;
-    padding:1rem 3rem;
-    border-radius: .5rem;
-    background-color: var(--blue);
-    cursor: pointer;
-    font-size: 2rem;
-    color:var(--white);
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
-.link-btn:hover{
-    background-color: var(--black);
-    color:var(--white);
+.logo {
+    font-size: 2.5rem;
+    color: var(--bs-dark);
 }
 
-.header{
-    padding:2rem;
-    border-bottom:var(--border);
-}
-
-.header .active{
-    background-color: var(--white);
-    box-shadow: var(--box-shadow);
-    border: 0;
-}
-
-.header .logo{
-    font-size: 3rem;
-    color:var(--black);
-}
-
-.header .logo span{
+.logo span {
     color: darkcyan;
 }
 
-.header .nav a{
-    margin:0 1rem;
-    font-size: 2rem;
-    color:var(--black);
+.nav a {
+    margin: 0 1.5rem;
+    font-size: 1.2rem;
+    color: var(--bs-dark);
+    text-decoration: none;
 }
 
-.header .nav a:hover{
-    color: var(--blue);
+.nav a:hover {
+    color: var(--bs-primary);
 }
 
-#menu-btn{
-    font-size: 2.5rem;
-    color: var(--black);
+.link-btn {
+    display: inline-block;
+    border-radius: .5rem;
+    background-color: var(--bs-primary);
     cursor: pointer;
-    display: none;
+    font-size: 1.2rem;
+    color: var(--bs-white);
+    padding: .5rem 1rem;
+    text-decoration: none;
 }
+
+.link-btn:hover {
+    background-color: var(--bs-dark);
+    color: var(--bs-white);
+}
+
+.heading {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--bs-dark);
+    text-transform: uppercase;
+    font-weight: bolder;
+    margin-bottom: 3rem;
+    background-color: var(--bs-light);
+    padding: 1rem;
+}
+
+.header {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--bs-border-color);
+}
+
+.header .active {
+    background-color: var(--bs-white);
+    box-shadow: var(--bs-box-shadow);
+    border: 0;
+}
+
+#menu-btn {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+@media (max-width: 991px) {
+    .nav {
+        display: none;
+    }
+
+    #menu-btn {
+        display: inline-block;
+    }
+
+    .nav.active {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bs-white);
+        box-shadow: var(--bs-box-shadow);
+    }
+
+    .nav a {
+        display: block;
+        margin: 1rem 0;
+        text-align: center;
+    }
+}
+
+.section-header h2{
+    font-size: 3rem;
+    font-weight: 300;
+}
+
 
 
 .home{
@@ -121,14 +170,15 @@ section{
 }
 
 .home .content h3{
-    font-size: 6rem;
+    font-family: 'Merriweather';
+    font-size: 3rem;
     text-transform: uppercase;
     color: var(--black);
 }
 
 .home .content p{
     line-height: 2;
-    font-size: 3rem;
+    font-size: 2rem;
     color: var(--light-color);
     padding:1rem 0;
 }
@@ -143,20 +193,20 @@ section{
  }
 
 .about .content span{
-    font-size: 5rem;
+    font-size: 2rem;
     color: var(--black);
     font-weight: bold;
 }
 
 .about .content h3{
-    font-size: 3.5rem;
+    font-size: 1.5rem;
     color: var(--black);
     margin-top: 1rem;
 }
 
 .about .content p{
     padding: 1rem 0;
-    font-size: 2.5rem;
+    font-size: 1rem;
     color: var(--black);
     line-height: 2;
     text-align: justify;
@@ -166,7 +216,13 @@ section{
     background-color: var(--deyork);
 }
 
-.services .box-container{
+.services h3{
+    color: white;
+}
+.service-card{
+    background-color: white;
+}
+/* .services .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 2rem;
@@ -186,16 +242,16 @@ section{
 }
 
 .services .box-container .box h3{
-    font-size: 3rem;
+    font-size: 2rem;
     padding: 1rem 0;
     color: var(--black);
 }
 
 .services .box-container .box p{
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     color: var(--black);
     line-height: 2;
-}
+} */
 
 .process .box-container{
     display: grid;
@@ -221,13 +277,13 @@ section{
 }
 
 .process .box-container .box h3{
-    font-size: 3.5rem;
+    font-size: 2rem;
     color: var(--black);
     margin: 1.5rem 0;
 }
 
 .process .box-container .box p{
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     color: var(--black);
     line-height: 2;
 }
@@ -253,7 +309,7 @@ section{
 .reviews .box-container .box p{
     padding: 2rem 0;
     line-height: 2;
-    font-size: 3rem;
+    font-size: 1.5rem;
     color: var(--light-color);
     margin-bottom: 0;
 }
@@ -272,7 +328,7 @@ section{
 }
 
 .reviews .box-container .box h3{
-    font-size: 2.5rem;
+    font-size: 2%;
     color: var(--black);
 }
 
@@ -281,17 +337,9 @@ section{
     font-size: 2rem;
 }
 
-.contact{
-    background-color: var(--deyork);
-}
 
 .contact form{
-    border-radius: .5rem;
-    background-color: var(--white);
-    padding: 2rem;
-    margin: 0 auto;
-    max-width: 50rem;
-    font-weight: bold;
+    font-size: 3rem;
 }
 
 .contact form .message{
@@ -304,19 +352,6 @@ section{
     text-align: center;
 }
 
-.contact form .box{
-    width: 100%;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    border-radius: .5rem;
-    background-color: var(--white);
-    padding: 1.2rem 1.4rem;
-    font-size: 2.5rem;
-    color: var(--black);
-    text-transform: none;
-    box-shadow: var(--box-shadow);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
 
 .contact form span{
     font-size: 3rem;

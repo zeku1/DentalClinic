@@ -1,0 +1,89 @@
+body {
+    background: url("{{ asset('img/admin.pnl.jpg') }}") no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+
+  label {
+    font-family: 'Merriweather', sans-serif;
+    font-size: 20px;
+    color: black;
+    text-align: left;
+  }
+
+  .login-container h1{
+      font-size: 50px;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 50px;
+      margin-bottom: 50px;
+  }
+
+  table {
+    font-family: 'Merriweather', sans-serif;
+    font-size: 20px;
+    color: black;
+    border-collapse: collapse;
+    width: 100%;
+    border: 3px solid black;
+    text-align: center;
+  }
+
+  th, td {
+    border: 3px solid black;
+    padding: 15px;
+  }
+
+  .button-container {
+    color: black;
+    font-family: 'Merriweather', sans-serif;
+    text-align: center;
+  }
+
+  .btn-primary {
+    background-color: transparent;
+    border-color: transparent;
+    color: green;
+    font-family: 'Merriweather', sans-serif;
+    font-size: 20px;
+  }
+
+  .btn-danger {
+    background-color: transparent;
+    border-color: transparent;
+    color: red;
+    font-family: 'Merriweather', sans-serif;
+    font-size: 20px;
+  }
+
+  .btn-secondary{
+    background-color: transparent;
+    border-color: transparent;
+    color: blue;
+    font-family: 'Merriweather', sans-serif;
+    font-size: 20px;
+  }
+
+  .form-group {
+    font-family: 'Merriweather', sans-serif;
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+  }
+
+  .form-group label {
+    font-family: 'Merriweather', sans-serif;
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+
+  .form-control {
+    width: 90%;
+    font-size: 20px;
+    padding: 10px 20px;
+    height: auto; 
+  }

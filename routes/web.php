@@ -1,26 +1,92 @@
 <?php
 
 use App\Http\Controllers\AppointmentsController;
+use App\Http\Controllers\DentistController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PatientController;
+use App\Http\Controllers\ProcedureController;
 use App\Models\Appointments;
+use App\Models\Dentist;
+use App\Models\Patient;
+use App\Models\Procedure;
+use Illuminate\Foundation\Configuration\Middleware;
 
 Route::get('/', function () {
-    return view('dashboard');
-});
+    $procedures = Procedure::all();
+    $dentistCount = Dentist::all()->count();
+    $patients = Patient::all()->count();
+    return view('dashboard',[
+        'procedures' => $procedures,
+        'dentistCount' => $dentistCount,
+        'patients' => $patients,
+
+    ]);
+})->name('dashboard');
 
 Route::post('appointment/store',[PatientController::class,'store']);
+Route::post('appointment/submit',[AppointmentsController::class,'store'])
+    ->name('client.submit');
 
 Route::get('/login',[LoginController::class, 'show']);
 Route::post('/login',[LoginController::class, 'login'])->name('login.submit');
 
-Route::get('/admin', function () {
-    return view('admin_panel');
-})->name('admin.panel');
+//admin dashboard
+Route::group(['prefix' => 'admin' , 'middleware' => 'customeAuth'],function(){
+    Route::get('/', function () {
+        return view('admin_dashboard');
+    })->name('admin.dashboard');
 
-Route::get('/admin/appointments',[AppointmentsController::class,'index'])->name('appointments');
-Route::put('/admin/appointments/approve',[AppointmentsController::class,'approve']);
-Route::put('/admin/appointments/finished',[AppointmentsController::class,'finished']);
+    Route::get('/panel', function () {
+        return view('admin_panel');
+    })->name('admin.panel');
 
-Route::get('/admin/scheduled', [AppointmentsController::class, 'scheduled']);
+    Route::get('/patients',[PatientController::class,'index'])
+        ->name('admin.patients');
+    Route::get('/patients/create',[PatientController::class,'create'])
+        ->name('admin.patients.add');
+    Route::post('/patients/store',[PatientController::class,'store'])
+        ->name('admin.patients.store');
+    Route::get('/patients/{patient}/edit',[PatientController::class,'edit'])
+        ->name('admin.patients.edit');
+    Route::put('/patients/{patient}/update',[PatientController::class,'update'])
+        ->name('admin.patients.update');
+
+    Route::get('/appointments',[AppointmentsController::class,'index'])
+        ->name('admin.appointments');
+    Route::put('appointments/{appointment}/approve',[AppointmentsController::class,'approve'])
+        ->name('appointment.approve');
+    Route::delete('appointments/{appointment}/delete',[AppointmentsController::class,'destroy'])
+        ->name('appointment.destroy');
+    Route::put('/appointments/finished',[AppointmentsController::class,'finished']);
+    Route::get('/schedule',[AppointmentsController::class,'schedule'])
+        ->name('admin.schedule');
+
+    Route::get('/procedure',[ProcedureController::class,'index'])
+        ->name('admin.procedures');
+    Route::get('/procedure/create',[ProcedureController::class,'create'])
+        ->name('admin.procedures.create');
+    Route::post('/procedure/store',[ProcedureController::class,'store'])
+        ->name('admin.procedures.store');
+    Route::get('/procedure/{procedure}/edit',[ProcedureController::class,'edit'])
+        ->name('admin.procedures.edit');
+    Route::put('/procedure/{procedure}/update',[ProcedureController::class,'update'])
+        ->name('admin.procedures.update');
+        
+    Route::get('/dentist',[DentistController::class,'index'])
+        ->name('admin.dentists');
+    Route::get('/dentist/create',[DentistController::class,'create'])
+        ->name('admin.dentists.create');
+    Route::post('/dentist/store',[DentistController::class,'store'])
+        ->name('admin.dentists.store');
+    Route::get('/dentist/{dentist}/edit',[DentistController::class,'edit'])
+        ->name('admin.dentists.edit');
+    Route::put('/dentist/{dentist}/update',[DentistController::class,'update'])
+        ->name('admin.dentists.update');
+
+    Route::get('/scheduled', [AppointmentsController::class, 'scheduled']);
+
+    Route::post('/logout',[LoginController::class,'logout'])->name('logout');
+});
+
+

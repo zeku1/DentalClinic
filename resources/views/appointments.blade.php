@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APPOINTMENTS</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+    <!-- <style>
       body {
         background: url("{{ asset('img/admin.pnl.jpg') }}") no-repeat;
         background-size: cover;
@@ -96,7 +97,7 @@
         padding: 10px 20px;
         height: auto; 
       }
-    </style>
+    </style> -->
 </head>
 <body>
 
@@ -164,82 +165,6 @@
       @endforeach
     </table>
 
-    <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-          <h1 class="heading">make appointment</h1>
-
-            <form action="controller/appointment.php" method="POST">
-                <?php
-                    if(isset($message)){
-                        echo '<p class="message">'.$message.'</p>';
-                    }
-                ?>
-                <span>First Name:</span>
-                <input type="text" name="firstname" placeholder="" class="box">
-                
-                <span>Last Name:</span>
-                <input type="text" name="lastname" placeholder="" class="box">
-
-                <span>Age:</span>
-                <input type="text" name="age" placeholder="" class="box">
-
-                <span>address:</span>
-                <input type="text" name="address" placeholder="" class="box">
-
-                <!-- <span>Services :</span>
-
-                <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
-                <label class="btn btn-secondary" for="option1">Checked</label>
-
-                <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
-                <label class="btn btn-secondary" for="option2">Radio</label>
-
-
-                <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off">
-                <label class="btn btn-secondary" for="option4">Radio</label> -->
-
-                <!-- <select name="Services" class="box">
-                    <option value="dental_bonding"> </option>
-                    <option value="dental_bonding">Dental Bonding - P3,000</option>
-                    <option value="dental_crowns">Dental Crowns - P5,000</option>
-                    <option value="bridgework">Bridgework - P3,000</option>
-                    <option value="cosmetic_fillings">Cosmetic Fillings - P7,000</option>
-                    <option value="root_canal_therapy">Root Canal Therapy - P9,000</option>
-                    <option value="invisalign">Invisalign - P8,000</option>
-                    <option value="dental_veneers">Dental Veneers - P8,000</option>
-                    <option value="teeth_cleanings">Teeth Cleanings - P2,000</option>
-                    <option value="dentures">Dentures - P4,000</option>
-                    <option value="teeth_whitening">Teeth Whitening - P5,000</option>
-                    <option value="tooth_extractions">Tooth Extractions - 8,000</option>
-                </select> -->
-                <!-- <span>your email :</span>
-                <input type="email" name="email" placeholder="" class="box"> -->
-
-                <span>your number:</span>
-                <input type="number" name="number" placeholder="" class="box">
-
-                <span>appointment date:</span>
-                <input type="datetime-local" name="date" class="box">
-
-                <button type="submit" name="submit" class="link-btn">
-                    make appointment
-                </button>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Understood</button>
-          </div>
-        </div>
-      </div>
-    </div>
 
   </div>
 
