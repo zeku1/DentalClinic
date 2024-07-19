@@ -45,6 +45,11 @@ section{
     padding:7rem 2rem;
 }
 
+.navbar-solid{
+    background:url('../img/home_bg.jpg')  ;
+    background-size: cover;
+}
+
 .heading{
     text-align: center;
     color: var(--black);

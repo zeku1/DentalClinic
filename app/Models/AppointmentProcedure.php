@@ -25,4 +25,5 @@ class AppointmentProcedure extends Model
     {
         return $this->belongsTo(Procedure::class);
     }
+    
 }

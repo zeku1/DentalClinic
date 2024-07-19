@@ -51,17 +51,24 @@ Route::group(['prefix' => 'admin' , 'middleware' => 'customeAuth'],function(){
         ->name('admin.patients.edit');
     Route::put('/patients/{patient}/update',[PatientController::class,'update'])
         ->name('admin.patients.update');
+    Route::delete('/patients/{patient}/destrtoy',[PatientController::class,'destroy'])
+        ->name('admin.patients.destroy');
 
     Route::get('/appointments',[AppointmentsController::class,'index'])
         ->name('admin.appointments');
+    Route::get('/appointments/create',[AppointmentsController::class,'create'])
+        ->name('appointment.create');
     Route::put('appointments/{appointment}/approve',[AppointmentsController::class,'approve'])
         ->name('appointment.approve');
     Route::delete('appointments/{appointment}/delete',[AppointmentsController::class,'destroy'])
         ->name('appointment.destroy');
-    Route::put('/appointments/finished',[AppointmentsController::class,'finished']);
+    Route::put('/appointments/{appointment}/finished',[AppointmentsController::class,'finished'])
+        ->name('appointment.finished');
     Route::get('/schedule',[AppointmentsController::class,'schedule'])
         ->name('admin.schedule');
-
+    Route::put('/schedule/{appointment}/cancel',[AppointmentsController::class,'cancel'])
+        ->name('appointment.cancel');
+        
     Route::get('/procedure',[ProcedureController::class,'index'])
         ->name('admin.procedures');
     Route::get('/procedure/create',[ProcedureController::class,'create'])

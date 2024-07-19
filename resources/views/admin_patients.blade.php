@@ -32,6 +32,11 @@
                     <a href="{{route('admin.patients.edit',['patient' => $patient->id ])}}"><button class="btn btn-info">
                         edit
                     </button></a>
+                    <form action="{{route('admin.patients.destroy', ['patient' => $patient->id] )}}" method="POST" style="display:inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Remove</button>
+                    </form>
                 </td>
             </tr>
             @endforeach

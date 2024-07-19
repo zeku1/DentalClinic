@@ -26,8 +26,7 @@ class Appointments extends Model
 
     public function procedures()
     {
-        return $this->belongsToMany(Procedure::class, 'appointment_procedures')
-                    ->withTimestamps();
+        return $this->hasMany(AppointmentProcedure::class,'appointment_id');
     }
 
 }

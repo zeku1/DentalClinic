@@ -51,32 +51,29 @@ class AppointmentsController extends Controller
         return redirect()->back()->with(['message' => 'Appointment request has been scheduled']);
     }
 
-    public function finished(Request $request)
+    public function cancel(Appointments $appointment)
     {
-        // Validate the incoming request
-        $request->validate([
-            'id' => 'required'
-        ]);
 
-        // Find the appointment by ID
-        $appointment = Appointments::findOrFail($request->id);
+        $appointment->update(['finished' => 'cancelled']);
+
+        return redirect()->back()->with(['error' => 'Appointment has been cancelled']);
+    }
+
+    public function finished(Appointments $appointment)
+    {
 
         // Update the appointment's 'finished' status
         $appointment->update(['finished' => 'true']);
 
-        // Split the chosen procedures and trim any whitespace
-        $chosens = array_map('trim', explode(', ', $appointment->procedures));
+        $procedures = $appointment->procedures;
+        $total = 0.00;
 
-        $total = 0;
+        foreach($procedures as $procedure){
+            $total += $procedure->procedure->price;
+        }
 
-        // Iterate through all procedures and calculate the total cost
-        foreach ($chosens as $chosen) {
-            $id = (int)$chosen;
-            $procedure = Procedure::findOrFail($id);
-            dd($procedure->procedure_price);
-            $total += $procedure->procedure_price;
 
-        } 
+
         // Create a new payment record
         Payments::create([
             'appointment_id' => $appointment->id,
@@ -87,7 +84,7 @@ class AppointmentsController extends Controller
 
 
         // Redirect back to the previous page
-        return redirect()->back();
+        return redirect()->back()->with(['message'=>'Appointment is done! Proceed to payment.']);
     }
 
     /**
@@ -95,7 +92,10 @@ class AppointmentsController extends Controller
      */
     public function create()
     {
-  
+        $procedures = Procedure::all();
+        return view('admin_add_appointment',[
+            'procedures' => $procedures
+        ]);
     }
 
     /**

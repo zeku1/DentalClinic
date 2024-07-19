@@ -23,32 +23,33 @@
 
     <!-- header section starts -->
 
-    <header class="header fixed-top">
+    <header class="header fixed-top" id="mainNav">
+        <nav >
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-auto">
+                        <a href="#home" class="logo">dental<span>Clinic.</span></a>
+                    </div>
 
-        <div class="container">
-            <div class="row align-items-center justify-content-between">
-                <div class="col-auto">
-                    <a href="#home" class="logo">dental<span>Clinic.</span></a>
+                    <div class="col">
+                        <nav class="nav d-flex justify-content-center">
+                            <a href="#about">about</a>
+                            <a href="#procedure">procedures</a>
+                            <a href="#services">services</a>
+                            <a href="#reviews">reviews</a>
+                            <a href="#contact">contact</a>
+                            <a href="/login">admin</a>
+                        </nav>
+                    </div>
+
+                    <div class="col-auto">
+                        <a href="#contact" class="link-btn">make appointment</a>
+                    </div>
+
+                    <div id="menu-btn" class="fas fa-bars"></div>
                 </div>
-
-                <div class="col">
-                    <nav class="nav d-flex justify-content-center">
-                        <a href="#home">home</a>
-                        <a href="#about">about</a>
-                        <a href="#services">services</a>
-                        <a href="#reviews">reviews</a>
-                        <a href="#contact">contact</a>
-                        <a href="/login">admin</a>
-                    </nav>
-                </div>
-
-                <div class="col-auto">
-                    <a href="#contact" class="link-btn">make appointment</a>
-                </div>
-
-                <div id="menu-btn" class="fas fa-bars"></div>
             </div>
-        </div>
+        </nav>
 
     </header>
 
@@ -73,7 +74,7 @@
     </section>
 
     <!-- About Us Section -->
-    <section class="py-3 py-md-5 py-xl-8">
+    <section class="py-3 py-md-5 py-xl-8" id="about">
         <div class="container">
             <div class="row justify-content-md-center">
                 <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6 section-header">
@@ -132,11 +133,8 @@
 
     <!-- about section ends -->
 
-    <!-- services section starts -->
-
-    <!-- Service 1 - Bootstrap Brain Component -->
-    <!-- Service 9 - Bootstrap Brain Component -->
-    <section class="services py-3 py-md-5 py-xl-8">
+    <!-- Procedures-->
+    <section class="services py-3 py-md-5 py-xl-8" id="procedure">
         <div class="container">
             <div class="row justify-content-md-center">
                 <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6 section-header">
@@ -315,86 +313,10 @@
             </div>
         </div>
     </section>
-     <!-- <section class="services  sm-section" id="services">
-
-        <h1 class="heading">our services</h1>
-
-        <div class="box-container container">
 
 
-            <div class="box">
-                <img src="img\dental bond.png" alt="">
-                <h3>Dental Bonding</h3>
-                <p>Php 3,000</p>
-            </div>
-
-            <div class="box">
-                <img src="img\dental crown.jpg" alt="">
-                <h3>Dental Crowns</h3>
-                <p>Php 5,000</p>
-            </div>
-
-            <div class="box">
-                <img src="img\bridgework.png" alt="">
-                <h3>Bridgework</h3>
-                <p>Php 3,000</p>
-            </div>
-
-            <div class="box">
-                <img src="img\cosmetic fills.png" alt="">
-                <h3>Cosmetic Fillings</h3>
-                <p>Php 7,000</p>
-            </div>
-
-            <div class="box">
-                <img src="img\rootcanal therapy.png" alt="">
-                <h3>Root Canal Therapy</h3>
-                <p>Php 9,000</p>
-            </div>
-            <div class="box">
-                <img src="img\invisalign.png" alt="">
-                <h3>Invisalign</h3>
-                <p>Php 8,000</p>
-            </div>
-
-            <div class="box">
-                <img src="img\dental veeners.png" alt="">
-                <h3>Dental Veeners</h3>
-                <p>Php 8,000</p>
-            </div>
-
-            <div class="box">
-                <img src="img\teeth cleanings.png" alt="">
-                <h3>Teeth Cleanings</h3>
-                <p>Php 2,000</p>
-            </div>
-
-            <div class="box">
-                <img src="img\dentures.png" alt="">
-                <h3>Dentures</h3>
-                <p>Php 4,000</p>
-            </div>
-
-            <div class="box">
-                <img src="img\teeth whitening.png" alt="">
-                <h3>Teeth Whitening</h3>
-                <p>Php 5,000</p>
-            </div>
-
-            <div class="box">
-                <img src="img\tooth extractions.jpg" alt="">
-                <h3>Dental Crowns</h3>
-                <p>Php 8,000</p>
-            </div>
-
-        </div>
-
-    </section> -->
-
-    <!-- services section ends -->
-
-    <!-- Service 4 - Bootstrap Brain Component -->
-    <section class="bg-light py-5 py-xl-8">
+    <!-- Service-->
+    <section class="bg-light py-5 py-xl-8" id="services">
         <div class="container">
             <div class="row justify-content-md-center">
                 <div class="col-12 col-md-10 col-lg-8 col-xl-7 section-header">
@@ -410,12 +332,10 @@
                 <div class="col-12 col-sm-6 col-xl-3">
                     <div class="card border-0 border-bottom border-primary shadow-sm">
                         <div class="card-body text-center p-4 p-xxl-5">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-chat-text text-primary mb-4" viewBox="0 0 16 16">
-                                <path d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z" />
-                                <path d="M4 5.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8zm0 2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5z" />
-                            </svg>
-                            <h4 class="mb-4">Social Engagement</h4>
-                            <p class="mb-4 text-secondary">We can help you to create and manage social media campaigns that will engage your audience and promote your brand.</p>
+                            <img src="https://img.icons8.com/?size=80&id=42718&format=png&color=56cc9d">
+
+                            <h4 class="mb-4">Pediatric Dentistry</h4>
+                            <p class="mb-4 ">We provide gentle and compassionate dental care for children, ensuring a positive experience and helping to establish a foundation of good oral health habits from an early age.</p>
                             <a href="#!" class="fw-bold text-decoration-none link-primary">
                                 Learn More
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
@@ -428,11 +348,9 @@
                 <div class="col-12 col-sm-6 col-xl-3">
                     <div class="card border-0 border-bottom border-primary shadow-sm">
                         <div class="card-body text-center p-4 p-xxl-5">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-phone-flip text-primary mb-4" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M11 1H5a1 1 0 0 0-1 1v6a.5.5 0 0 1-1 0V2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v6a.5.5 0 0 1-1 0V2a1 1 0 0 0-1-1Zm1 13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-2a.5.5 0 0 0-1 0v2a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-2a.5.5 0 0 0-1 0v2ZM1.713 7.954a.5.5 0 1 0-.419-.908c-.347.16-.654.348-.882.57C.184 7.842 0 8.139 0 8.5c0 .546.408.94.823 1.201.44.278 1.043.51 1.745.696C3.978 10.773 5.898 11 8 11c.099 0 .197 0 .294-.002l-1.148 1.148a.5.5 0 0 0 .708.708l2-2a.5.5 0 0 0 0-.708l-2-2a.5.5 0 1 0-.708.708l1.145 1.144L8 10c-2.04 0-3.87-.221-5.174-.569-.656-.175-1.151-.374-1.47-.575C1.012 8.639 1 8.506 1 8.5c0-.003 0-.059.112-.17.115-.112.31-.242.6-.376Zm12.993-.908a.5.5 0 0 0-.419.908c.292.134.486.264.6.377.113.11.113.166.113.169 0 .003 0 .065-.13.187-.132.122-.352.26-.677.4-.645.28-1.596.523-2.763.687a.5.5 0 0 0 .14.99c1.212-.17 2.26-.43 3.02-.758.38-.164.713-.357.96-.587.246-.229.45-.537.45-.919 0-.362-.184-.66-.412-.883-.228-.223-.535-.411-.882-.571ZM7.5 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1Z" />
-                            </svg>
-                            <h4 class="mb-4">Mobile Design</h4>
-                            <p class="mb-4 text-secondary">We can help you to design and develop mobile apps and websites that are user-friendly and visually appealing.</p>
+                            <img src="https://img.icons8.com/?size=80&id=123858&format=png&color=56cc9d">
+                            <h4 class="mb-4">Cosmetic Dentistry</h4>
+                            <p class="mb-4 ">Enhance the appearance of your smile with our cosmetic dentistry services, including teeth whitening, veneers, and bonding. We use the latest techniques to give you a radiant smile.</p>
                             <a href="#!" class="fw-bold text-decoration-none link-primary">
                                 Learn More
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
@@ -445,12 +363,9 @@
                 <div class="col-12 col-sm-6 col-xl-3">
                     <div class="card border-0 border-bottom border-primary shadow-sm">
                         <div class="card-body text-center p-4 p-xxl-5">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-heart-pulse text-primary mb-4" viewBox="0 0 16 16">
-                                <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053.918 3.995.78 5.323 1.508 7H.43c-2.128-5.697 4.165-8.83 7.394-5.857.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17c3.23-2.974 9.522.159 7.394 5.856h-1.078c.728-1.677.59-3.005.108-3.947C13.486.878 10.4.28 8.717 2.01L8 2.748ZM2.212 10h1.315C4.593 11.183 6.05 12.458 8 13.795c1.949-1.337 3.407-2.612 4.473-3.795h1.315c-1.265 1.566-3.14 3.25-5.788 5-2.648-1.75-4.523-3.434-5.788-5Z" />
-                                <path d="M10.464 3.314a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8H.5a.5.5 0 0 0 0 1H4a.5.5 0 0 0 .416-.223l1.473-2.209 1.647 4.118a.5.5 0 0 0 .945-.049l1.598-5.593 1.457 3.642A.5.5 0 0 0 12 9h3.5a.5.5 0 0 0 0-1h-3.162l-1.874-4.686Z" />
-                            </svg>
-                            <h4 class="mb-4">SEO Services</h4>
-                            <p class="mb-4 text-secondary">We can help you to drive organic traffic and outrank competitors with our data-driven SEO strategies and optimize your content.</p>
+                            <img src="https://img.icons8.com/?size=80&id=0JPRVwhzjkWV&format=png&color=56cc9d">
+                            <h4 class="mb-4">Restorative Dentistry</h4>
+                            <p class="mb-4 ">From fillings and crowns to bridges and dentures, our restorative dentistry services aim to repair and replace damaged or missing teeth, restoring function and aesthetics to your smile.</p>
                             <a href="#!" class="fw-bold text-decoration-none link-primary">
                                 Learn More
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
@@ -463,11 +378,9 @@
                 <div class="col-12 col-sm-6 col-xl-3">
                     <div class="card border-0 border-bottom border-primary shadow-sm">
                         <div class="card-body text-center p-4 p-xxl-5">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-mouse text-primary mb-4" viewBox="0 0 16 16">
-                                <path d="M8 3a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 3zm4 8a4 4 0 0 1-8 0V5a4 4 0 1 1 8 0v6zM8 0a5 5 0 0 0-5 5v6a5 5 0 0 0 10 0V5a5 5 0 0 0-5-5z" />
-                            </svg>
-                            <h4 class="mb-4">24/7 Support</h4>
-                            <p class="mb-4 text-secondary">We offer 24/7 support to our clients. This means that you can always get help when you need it, no matter what time it is.</p>
+                            <img src="https://img.icons8.com/?size=80&id=MmdnMTF59fIH&format=png&color=56cc9d">
+                            <h4 class="mb-4">Orthodontics</h4>
+                            <p class="mb-4 ">Straighten your teeth and improve your bite with our orthodontic treatments, including traditional braces and Invisalign. We provide customized solutions for both children and adults.</p>
                             <a href="#!" class="fw-bold text-decoration-none link-primary">
                                 Learn More
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
@@ -482,7 +395,7 @@
     </section>
 
     <!-- Testimonial -->
-    <section class=" py-5 py-xl-8 services">
+    <section class=" py-5 py-xl-8 services" id="reviews">
         <div class="container">
             <div class="row justify-content-md-center">
                 <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6 section-header">
@@ -621,7 +534,7 @@
     <footer class="footer">
 
         <!-- Widgets - Bootstrap Brain Component -->
-        <section class="services py-4 py-md-5 py-xl-8 border-top border-light">
+        <section class="services py-4 py-md-5 py-xl-8 border-top border-light" id="footer">
             <div class="container overflow-hidden">
                 <div class="row gy-4 gy-lg-0 justify-content-xl-between">
                     <div class="col-12 col-md-4 col-lg-3 col-xl-2">
@@ -634,9 +547,9 @@
                     <div class="col-12 col-md-4 col-lg-3 col-xl-2">
                         <div class="widget">
                             <h4 class="widget-title mb-4">Get in Touch</h4>
-                            <address class="mb-4">New, Matina Pangi Rd, Davao City, Davao del Sur</address>
+                            <address class="mb-4 text-light">New, Matina Pangi Rd, Davao City, Davao del Sur</address>
                             <p class="mb-1">
-                                <a class="link-light text-decoration-none" href="tel:+15057922430">(505) 792-2430</a>
+                                <a class="link-light text-decoration-none" href="tel:+15057922430">(082) 227 5456</a>
                             </p>
                             <p class="mb-0">
                                 <a class="link-light text-decoration-none" href="mailto:demo@yourdomain.com">support@dentalclinic.com</a>
@@ -648,16 +561,16 @@
                             <h4 class="widget-title mb-4">Learn More</h4>
                             <ul class="list-unstyled">
                                 <li class="mb-2">
-                                    <a href="#!" class="link-light text-decoration-none">About</a>
+                                    <a href="/#about" class="link-light text-decoration-none">About</a>
                                 </li>
                                 <li class="mb-2">
-                                    <a href="#!" class="link-light text-decoration-none">Contact</a>
+                                    <a href="#procedure" class="link-light text-decoration-none">Procedures</a>
                                 </li>
                                 <li class="mb-2">
-                                    <a href="#!" class="link-light text-decoration-none">Advertise</a>
+                                    <a href="#services" class="link-light text-decoration-none">Services</a>
                                 </li>
                                 <li class="mb-2">
-                                    <a href="#!" class="link-light text-decoration-none">Terms of Service</a>
+                                    <a href="#reviews" class="link-light text-decoration-none">Testimonials</a>
                                 </li>
                                 <li class="mb-0">
                                     <a href="#!" class="link-light text-decoration-none">Privacy Policy</a>
@@ -668,7 +581,7 @@
                     <div class="col-12 col-lg-3 col-xl-4">
                         <div class="widget">
                             <h4 class="widget-title mb-4">Our Newsletter</h4>
-                            <p class="mb-4">Subscribe to our newsletter to get our news & discounts delivered to you.</p>
+                            <p class="mb-4 text-light">Subscribe to our newsletter to get our news & discounts delivered to you.</p>
                             <form action="#!">
                                 <div class="row gy-4">
                                     <div class="col-12">
@@ -700,7 +613,7 @@
                 <div class="row gy-4 gy-md-0 align-items-md-center">
                     <div class="col-xs-12 col-md-7 order-1 order-md-0">
                         <div class="copyright text-center text-md-start">
-                            &copy; 2024. All Rights Reserved.
+                            &copy; <?php echo date('Y'); ?>. All Rights Reserved.
                         </div>
                         <!-- <div class="credits text-secondary text-center text-md-start mt-2 fs-8">
                             Built by <a href="https://bootstrapbrain.com/" class="link-secondary text-decoration-none">BootstrapBrain</a> with <span class="text-primary">&#9829;</span>
@@ -746,49 +659,64 @@
         </div>
 
     </footer>
-    <!-- <section class="footer">
-
-        <div class="box-container container">
-
-            <div class="box">
-                <i class="fas fa-phone"></i>
-                <h3>phone number</h3>
-                <p>+916-243-0517</p>
-                <p>+901-021-0709</p>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-envelope"></i>
-                <h3>our address</h3>
-                <p>Davao City - 8000</p>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-envelope"></i>
-                <h3>opening hours</h3>
-                <p>07:00am to 10:00pm</p>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-envelope"></i>
-                <h3>email address</h3>
-                <p>triciamaelabra02@gmail.com</p>
-                <p>mariananito@gmail.com</p>
-            </div>
-
-            <p class="credit"> &copy; copyright @ <?php echo date('Y'); ?> by <span>ms. web designer</span>
-        </div>
-    </section> -->
-
-
 
     <!-- footer section ends -->
 
     <!-- custom js file link -->
     <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         document.getElementById('menu-btn').addEventListener('click', function() {
             document.querySelector('.nav').classList.toggle('active');
+        });
+
+        window.addEventListener('DOMContentLoaded', event => {
+
+            // Navbar shrink function
+            var navbarShrink = function() {
+                const navbarCollapsible = document.body.querySelector('#mainNav');
+                if (!navbarCollapsible) {
+                    return;
+                }
+                if (window.scrollY === 0) {
+                    navbarCollapsible.classList.remove('navbar-shrink')
+                    navbarCollapsible.classList.remove('navbar-solid')
+                } else {
+                    navbarCollapsible.classList.add('navbar-shrink')
+                    navbarCollapsible.classList.add('navbar-solid')
+                }
+
+            };
+
+            // Shrink the navbar 
+            navbarShrink();
+
+            // Shrink the navbar when page is scrolled
+            document.addEventListener('scroll', navbarShrink);
+
+            // // Activate Bootstrap scrollspy on the main nav element
+            // const mainNav = document.body.querySelector('#mainNav');
+            // if (mainNav) {
+            //     new bootstrap.ScrollSpy(document.body, {
+            //         target: '#mainNav',
+            //         rootMargin: '0px 0px -40%',
+            //     });
+            // };
+
+            // // Collapse responsive navbar when toggler is visible
+            // const navbarToggler = document.body.querySelector('.navbar-toggler');
+            // const responsiveNavItems = [].slice.call(
+            //     document.querySelectorAll('#navbarResponsive .nav-link')
+            // );
+            // responsiveNavItems.map(function(responsiveNavItem) {
+            //     responsiveNavItem.addEventListener('click', () => {
+            //         if (window.getComputedStyle(navbarToggler).display !== 'none') {
+            //             navbarToggler.click();
+            //         }
+            //     });
+            // });
+
+
         });
     </script>
 

@@ -3,7 +3,7 @@
 @section('content')
 
 <h1>Appointments</h1>
-<a href="{{route('admin.patients.add')}}"><button class="btn btn-primary">
+<a href=""><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
         ADD
     </button></a>
 <!-- Table for larger screens -->
@@ -14,6 +14,7 @@
                 <th scope="col">ID</th>
                 <th scope="col">Last Name</th>
                 <th scope="col">First Name</th>
+                <th scope="col">procedures</th>
                 <th scope="col">Date</th>
                 <th scope="col">Time</th>
                 <th scope="col"></th>
@@ -25,6 +26,13 @@
                 <td>{{ $appointment->id }}</td>
                 <td>{{ $appointment->patient->first_name }}</td>
                 <td>{{ $appointment->patient->last_name}}</td>
+                <td>
+                    @foreach($appointment->procedures as $procedure)
+
+                    <p>{{$procedure->procedure->name}}</p>
+
+                    @endforeach
+                </td>
                 <td>{{ $appointment->appointment_date }}</td>
                 <td>{{ $appointment->appointment_time }}</td>
                 <td>
@@ -39,7 +47,7 @@
                     <form action="{{route('appointment.destroy', ['appointment' => $appointment->id] )}}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-danger">Remove</button>
                     </form>
                 </td>
             </tr>
@@ -76,9 +84,27 @@
                         </div>
                     </div>
                 </div>
-                @endforeach
+            </div>
+            @endforeach
         </tbody>
     </table>
+</div>
+
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Set dentist to proceed</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- Cards for smaller screens -->
