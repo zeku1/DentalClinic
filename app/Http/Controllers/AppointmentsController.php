@@ -36,7 +36,6 @@ class AppointmentsController extends Controller
                                     ->get();
 
         $dentist = Dentist::all();
-
         return view('admin_schedule',[
             'appointments' => $appointments,
             'dentists' => $dentist,
