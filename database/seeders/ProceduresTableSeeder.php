@@ -14,17 +14,17 @@ class ProceduresTableSeeder extends Seeder
     public function run(): void
     {
         $procedures = [
-            ['Name' => 'Dental bonding', 'Price' => 5000],
-            ['Name' => 'Dental crowns', 'Price' => 10000],
-            ['Name' => 'Bridgework', 'Price' => 15000],
-            ['Name' => 'Cosmetic fillings', 'Price' => 3000],
-            ['Name' => 'Root canal therapy', 'Price' => 8000],
-            ['Name' => 'Invisalign', 'Price' => 80000],
-            ['Name' => 'Dental veneers', 'Price' => 12000],
-            ['Name' => 'Teeth cleanings', 'Price' => 1500],
-            ['Name' => 'Dentures', 'Price' => 20000],
-            ['Name' => 'Teeth whitening', 'Price' => 6000],
-            ['Name' => 'Tooth extractions', 'Price' => 2000]
+            ['name' => 'Dental bonding', 'price' => 5000],
+            ['name' => 'Dental crowns', 'price' => 10000],
+            ['name' => 'Bridgework', 'price' => 15000],
+            ['name' => 'Cosmetic fillings', 'price' => 3000],
+            ['name' => 'Root canal therapy', 'price' => 8000],
+            ['name' => 'Invisalign', 'price' => 80000],
+            ['name' => 'Dental veneers', 'price' => 12000],
+            ['name' => 'Teeth cleanings', 'price' => 1500],
+            ['name' => 'Dentures', 'price' => 20000],
+            ['name' => 'Teeth whitening', 'price' => 6000],
+            ['name' => 'Tooth extractions', 'price' => 2000]
         ];
 
         DB::table('procedures')->insert($procedures);
