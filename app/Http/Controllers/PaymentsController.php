@@ -13,55 +13,18 @@ class PaymentsController extends Controller
      */
     public function index()
     {
-        //
+        $payments = Payments::all();
+
+        return view('admin_payments',[
+            'payments' => $payments
+        ]);
+    }
+
+    public function paid(Payments $payments){
+        $payments->update(['paid' => 'true']);
+
+        return redirect()->back()->with(['message' => 'Paid succesfully']);
     }
 
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Payments $payments)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Payments $payments)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Payments $payments)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Payments $payments)
-    {
-        //
-    }
 }

@@ -15,4 +15,9 @@ class Payments extends Model
        'duedate',
        'paid',
     ];
+
+    public function appointment()
+    {
+        return $this->belongsTo(Appointments::class, 'appointment_id');
+    }
 }

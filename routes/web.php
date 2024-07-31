@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\AppointmentsController;
+use App\Http\Controllers\PaymentsController;
 use App\Http\Controllers\DentistController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
@@ -11,6 +11,8 @@ use App\Models\Dentist;
 use App\Models\Patient;
 use App\Models\Procedure;
 use Illuminate\Foundation\Configuration\Middleware;
+use App\Http\Controllers\AppointmentsController;
+use App\Http\Controllers\AppointmentProcedureController;
 
 Route::get('/', function () {
     $procedures = Procedure::all();
@@ -69,6 +71,11 @@ Route::group(['prefix' => 'admin' , 'middleware' => 'customeAuth'],function(){
     Route::put('/schedule/{appointment}/cancel',[AppointmentsController::class,'cancel'])
         ->name('appointment.cancel');
         
+    Route::get('/payments',[PaymentsController::class,'index'])
+        ->name('payment.index');
+    Route::put('/payment/{payments}/paid',[PaymentsController::class,'paid'])
+        ->name('payment.paid');
+
     Route::get('/procedure',[ProcedureController::class,'index'])
         ->name('admin.procedures');
     Route::get('/procedure/create',[ProcedureController::class,'create'])

@@ -138,7 +138,7 @@
             </div>
             <div class="btn-container">
                 <input type="submit" class="btn btn-primary" value="Login">
-                <button type="button" class="btn btn-secondary" onclick="goToMainPage()">Cancel</button>
+                <a href="/"> <button type="button" class="btn btn-secondary">Cancel</button></a>
             </div>
         </form>
     </div>
