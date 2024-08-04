@@ -15,10 +15,12 @@ class ForceHttps
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!$request->secure()) {
+        $isBehindProxy = env('APP_BEHIND_PROXY', false);
+
+        if (!$request->secure() && (!$isBehindProxy || $request->header('X-Forwarded-Proto') !== 'https')) {
             return redirect()->secure($request->getRequestUri());
         }
-        
+
         return $next($request);
     }
 }
