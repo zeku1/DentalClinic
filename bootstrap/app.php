@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Middleware\ForceHttps;
 use App\Http\Middleware\CustomeAuthMiddleware;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
