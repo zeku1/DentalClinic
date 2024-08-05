@@ -3,9 +3,9 @@
 @section('content')
 
 <h1>Schedule</h1>
-<a href="{{route('admin.patients.add')}}"><button class="btn btn-primary">
+<!-- <a href="{{route('admin.patients.add')}}"><button class="btn btn-primary">
         ADD
-    </button></a>
+    </button></a> -->
 <!-- Table for larger screens -->
 <div class="table-responsive d-none d-md-block">
     <table class="table table-hover">
