@@ -44,7 +44,7 @@
                         approve
                     </button>
                     <!-- Delete Form -->
-                    <form action="{{route('appointment.destroy', ['appointment' => $appointment->id] )}}" method="POST" style="display:inline;">
+                    <form action="{{secure_url('appointment.destroy', ['appointment' => $appointment->id] )}}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Remove</button>
@@ -61,7 +61,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form action="{{route('appointment.approve', ['appointment' => $appointment->id] )}}" method="POST" style="display:inline;">
+                            <form action="{{secure_url('appointment.approve', ['appointment' => $appointment->id] )}}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('PUT')
 

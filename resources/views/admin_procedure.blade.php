@@ -3,7 +3,7 @@
 @section('content')
 
 <h1> Procedures </h1>
-<a href="{{route('admin.procedures.create')}}"><button class="btn btn-primary">
+<a href="{{secure_url('admin.procedures.create')}}"><button class="btn btn-primary">
         ADD
     </button></a>
 <!-- Table for larger screens -->
@@ -26,7 +26,7 @@
                 <td>{{ $procedure->description}}</td>
                 <td>{{ $procedure->price}}</td>
                 <td>
-                    <a href="{{ route('admin.procedures.edit',['procedure' => $procedure->id]) }}">
+                    <a href="{{ secure_url('admin.procedures.edit',['procedure' => $procedure->id]) }}">
                         <button class="btn btn-info">
                             edit
                         </button>
@@ -48,7 +48,7 @@
                 <strong>Name: </strong> {{$procedure->name }}<br>
                 <strong>Description: </strong> {{ $procedure->description}}<br>
             </p>
-            <a href="{{ route('admin.procedures.edit',['procedure' => $procedure->id]) }}">
+            <a href="{{ secure_url('admin.procedures.edit',['procedure' => $procedure->id]) }}">
                 <button class="btn btn-info">
                     edit
                 </button>

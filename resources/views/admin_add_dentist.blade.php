@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form action="{{ route('admin.dentists.store') }}" method="POST">
+<form action="{{ secure_url('admin.dentists.store') }}" method="POST">
     @csrf
     <fieldset>
         <legend>Add new Dentist</legend>

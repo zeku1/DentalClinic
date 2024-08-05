@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form action="{{ route('admin.procedures.update',[ 'procedure' => $procedure->id ]) }}" method="POST">
+<form action="{{ secure_url('admin.procedures.update',[ 'procedure' => $procedure->id ]) }}" method="POST">
     @method('PUT')
     @csrf
     <fieldset>

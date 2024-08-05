@@ -3,7 +3,7 @@
 @section('content')
 
 <h1>Schedule</h1>
-<a href="{{route('admin.patients.add')}}"><button class="btn btn-primary">
+<a href="{{secure_url('admin.patients.add')}}"><button class="btn btn-primary">
         ADD
     </button></a>
 <!-- Table for larger screens -->
@@ -42,12 +42,12 @@
                 <td>{{ $isPast ? 'Past' : 'Upcoming' }}</td>
                 <td>
                     <a href=""><button class="btn btn-info">Edit</button></a>
-                    <form action="{{ route('appointment.finished', ['appointment' => $appointment->id]) }}" method="POST" style="display:inline;">
+                    <form action="{{ secure_url('appointment.finished', ['appointment' => $appointment->id]) }}" method="POST" style="display:inline;">
                         @csrf
                         @method('PUT')
                         <button type="submit" class="btn btn-primary">done</button>
                     </form>
-                    <form action="{{ route('appointment.cancel', ['appointment' => $appointment->id]) }}" method="POST" style="display:inline;">
+                    <form action="{{ secure_url('appointment.cancel', ['appointment' => $appointment->id]) }}" method="POST" style="display:inline;">
                         @csrf
                         @method('PUT')
                         <button type="submit" class="btn btn-danger">Remove</button>

@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form action="{{route('client.submit')}}" method="POST" class="row g-3 fs-5">
+<form action="{{ secure_url('client.submit')}}" method="POST" class="row g-3 fs-5">
 
     @csrf
     <legend>Add new Procedure</legend>

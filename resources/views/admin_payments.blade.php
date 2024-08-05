@@ -34,7 +34,7 @@
                 <td>{{ $payment->paid}}</td>
                 <td>
 
-                    <form action="{{ route('payment.paid', ['payments' => $payment->id]) }}" method="POST" style="display:inline;">
+                    <form action="{{ secure_url('payment.paid', ['payments' => $payment->id]) }}" method="POST" style="display:inline;">
                         @csrf
                         @method('PUT')
                         <button type="submit" class="btn btn-primary">Paid</button>

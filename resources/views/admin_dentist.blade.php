@@ -3,7 +3,7 @@
 @section('content')
 
 <h1> Dentist </h1>
-<a href="{{route('admin.dentists.create')}}"><button class="btn btn-primary">
+<a href="{{secure_url('admin.dentists.create')}}"><button class="btn btn-primary">
     ADD
 </button></a>
 <!-- Table for larger screens -->

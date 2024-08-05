@@ -126,7 +126,7 @@
             <img src="img/logo2.png" alt="Logo">
         </div>
 
-        <form  action="{{ route('login.submit') }}" method="POST">
+        <form  action="{{ secure_url('login.submit') }}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="username">USERNAME:</label>
