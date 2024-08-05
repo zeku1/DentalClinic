@@ -29,7 +29,7 @@
                 <td>{{ $patient->number }}</td>
                 <td>{{ $patient->email }}</td>
                 <td>
-                    <a href="{{route'admin.patients.edit',['patient' => $patient->id ])}}"><button class="btn btn-info">
+                    <a href="{{route('admin.patients.edit',['patient' => $patient->id ])}}"><button class="btn btn-info">
                         edit
                     </button></a>
                     <form action="{{secure_url('admin.patients.destroy', ['patient' => $patient->id] )}}" method="POST" style="display:inline;">
