@@ -32,7 +32,7 @@
                     <a href="{{route('admin.patients.edit',['patient' => $patient->id ])}}"><button class="btn btn-info">
                         edit
                     </button></a>
-                    <form action="{{secure_url('admin.patients.destroy', ['patient' => $patient->id] )}}" method="POST" style="display:inline;">
+                    <form action="{{secure_url('admin/patients/'.$patient->id.'/destrtoy')}}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Remove</button>

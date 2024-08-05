@@ -3,7 +3,7 @@
 @section('content')
 
 <h1>Schedule</h1>
-<a href="{{secure_url('admin.patients.add')}}"><button class="btn btn-primary">
+<a href="{{route('admin.patients.add')}}"><button class="btn btn-primary">
         ADD
     </button></a>
 <!-- Table for larger screens -->
@@ -42,12 +42,12 @@
                 <td>{{ $isPast ? 'Past' : 'Upcoming' }}</td>
                 <td>
                     <!-- <a href=""><button class="btn btn-info">Edit</button></a> -->
-                    <form action="{{ secure_url('admin/appointments$appointment->id/finished') }}" method="POST" style="display:inline;">
+                    <form action="{{ secure_url('admin/appointments/'.$appointment->id.'/finished') }}" method="POST" style="display:inline;">
                         @csrf
                         @method('PUT')
                         <button type="submit" class="btn btn-primary">done</button>
                     </form>
-                    <form action="{{ secure_url('admin/schedule/$appointment->id/cancel') }}" method="POST" style="display:inline;">
+                    <form action="{{ secure_url('admin/schedule/'.$appointment->id.'/cancel') }}" method="POST" style="display:inline;">
                         @csrf
                         @method('PUT')
                         <button type="submit" class="btn btn-danger">Remove</button>
@@ -71,12 +71,12 @@
                 <strong>Last Name: </strong> {{ $appointment->patient->last_name }}<br>
                 <strong>Date: </strong> {{$appointment->appointment_date}}<br>
                 <strong>Time: </strong> {{$appointment->appointment_time }}<br>
-                <form action="{{ secure_url('admin/appointments$appointment->id/finished') }}" method="POST" style="display:inline;">
+                <form action="{{ secure_url('admin/appointments/'.$appointment->id.'/finished') }}" method="POST" style="display:inline;">
                         @csrf
                         @method('PUT')
                         <button type="submit" class="btn btn-primary">done</button>
                     </form>
-                    <form action="{{ secure_url('admin/schedule/$appointment->id/cancel') }}" method="POST" style="display:inline;">
+                    <form action="{{ secure_url('admin/schedule/'.$appointment->id.'/cancel') }}" method="POST" style="display:inline;">
                         @csrf
                         @method('PUT')
                         <button type="submit" class="btn btn-danger">Remove</button>

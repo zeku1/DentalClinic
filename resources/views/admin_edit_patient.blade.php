@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form action="{{ secure_url('admin/patients/$patient->id/update') }}" method="POST">
+<form action="{{ secure_url('admin/patients/'.$patient->id.'/update') }}" method="POST">
     @method('PUT')
     @csrf
     <fieldset>
