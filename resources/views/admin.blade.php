@@ -62,7 +62,7 @@
             <img src="https://picsum.photos/100" class="rounded-circle mb-3" alt="Administrator">
             <p>Administrator</p>
             <p>{{Auth::user()->email}}</p>
-            <form action="{{ secure_url('logout') }}" method="POST">
+            <form action="{{ secure_url('admin/logout') }}" method="POST">
                 @csrf
                 <button class="btn btn-light mb-4" type="submit">Log out</button>
             </form>

@@ -59,8 +59,6 @@
         <input type="time" name="appointment_time" id="appointment_time" class="form-control">
     </div>
 
-    <input type="text" value="">
-
     <div class="col-12 text-center">
         <button type="submit" name="submit" class="btn btn-primary">Make Appointment</button>
     </div>
