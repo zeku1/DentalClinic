@@ -463,7 +463,7 @@
     <section class="container contact py-5" id="contact">
         <h1 class="text-center mb-4 fs-1">Make Appointment</h1>
 
-        <form action="{{secure_url('client.submit')}}" method="POST" class="row g-3 fs-5">
+        <form action="{{secure_url(route('client.submit'))  }}" method="POST" class="row g-3 fs-5">
 
             @csrf
 
