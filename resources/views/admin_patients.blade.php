@@ -3,7 +3,7 @@
 @section('content')
 
 <h1>Patients</h1>
-<a href="{{secure_url('admin.patients.add')}}"><button class="btn btn-primary">
+<a href="{{route('admin.patients.add')}}"><button class="btn btn-primary">
     ADD
 </button></a>
 <!-- Table for larger screens -->
@@ -29,7 +29,7 @@
                 <td>{{ $patient->number }}</td>
                 <td>{{ $patient->email }}</td>
                 <td>
-                    <a href="{{secure_url('admin.patients.edit',['patient' => $patient->id ])}}"><button class="btn btn-info">
+                    <a href="{{route'admin.patients.edit',['patient' => $patient->id ])}}"><button class="btn btn-info">
                         edit
                     </button></a>
                     <form action="{{secure_url('admin.patients.destroy', ['patient' => $patient->id] )}}" method="POST" style="display:inline;">

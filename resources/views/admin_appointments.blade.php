@@ -36,15 +36,15 @@
                 <td>{{ $appointment->appointment_date }}</td>
                 <td>{{ $appointment->appointment_time }}</td>
                 <td>
-                    <a href=""><button class="btn btn-info">
+                    <!-- <a href=""><button class="btn btn-info">
                             Edit
-                        </button></a>
+                        </button></a> -->
                     <!-- Button to Open the Modal -->
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         approve
                     </button>
                     <!-- Delete Form -->
-                    <form action="{{secure_url('appointment.destroy', ['appointment' => $appointment->id] )}}" method="POST" style="display:inline;">
+                    <form action="{{secure_url('appointments/$appointment->id/delete')}}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Remove</button>
@@ -61,7 +61,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form action="{{secure_url('appointment.approve', ['appointment' => $appointment->id] )}}" method="POST" style="display:inline;">
+                            <form action="{{secure_url('admin/appointments/ $appointment->id/approve')}}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('PUT')
 

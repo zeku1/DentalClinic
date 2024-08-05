@@ -26,7 +26,7 @@
                 <td>{{ $procedure->description}}</td>
                 <td>{{ $procedure->price}}</td>
                 <td>
-                    <a href="{{ secure_url('admin.procedures.edit',['procedure' => $procedure->id]) }}">
+                    <a href="{{ route('admin.procedures.edit',['procedure' => $procedure->id]) }}">
                         <button class="btn btn-info">
                             edit
                         </button>
@@ -48,7 +48,7 @@
                 <strong>Name: </strong> {{$procedure->name }}<br>
                 <strong>Description: </strong> {{ $procedure->description}}<br>
             </p>
-            <a href="{{ secure_url('admin.procedures.edit',['procedure' => $procedure->id]) }}">
+            <a href="{{ route('admin.procedures.edit',['procedure' => $procedure->id]) }}">
                 <button class="btn btn-info">
                     edit
                 </button>

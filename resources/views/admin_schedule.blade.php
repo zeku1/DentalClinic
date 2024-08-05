@@ -41,13 +41,13 @@
                 <td>{{ $appointment->appointment_time }}</td>
                 <td>{{ $isPast ? 'Past' : 'Upcoming' }}</td>
                 <td>
-                    <a href=""><button class="btn btn-info">Edit</button></a>
-                    <form action="{{ secure_url('appointment.finished', ['appointment' => $appointment->id]) }}" method="POST" style="display:inline;">
+                    <!-- <a href=""><button class="btn btn-info">Edit</button></a> -->
+                    <form action="{{ secure_url('admin/appointments$appointment->id/finished') }}" method="POST" style="display:inline;">
                         @csrf
                         @method('PUT')
                         <button type="submit" class="btn btn-primary">done</button>
                     </form>
-                    <form action="{{ secure_url('appointment.cancel', ['appointment' => $appointment->id]) }}" method="POST" style="display:inline;">
+                    <form action="{{ secure_url('admin/schedule/$appointment->id/cancel') }}" method="POST" style="display:inline;">
                         @csrf
                         @method('PUT')
                         <button type="submit" class="btn btn-danger">Remove</button>
@@ -71,6 +71,16 @@
                 <strong>Last Name: </strong> {{ $appointment->patient->last_name }}<br>
                 <strong>Date: </strong> {{$appointment->appointment_date}}<br>
                 <strong>Time: </strong> {{$appointment->appointment_time }}<br>
+                <form action="{{ secure_url('admin/appointments$appointment->id/finished') }}" method="POST" style="display:inline;">
+                        @csrf
+                        @method('PUT')
+                        <button type="submit" class="btn btn-primary">done</button>
+                    </form>
+                    <form action="{{ secure_url('admin/schedule/$appointment->id/cancel') }}" method="POST" style="display:inline;">
+                        @csrf
+                        @method('PUT')
+                        <button type="submit" class="btn btn-danger">Remove</button>
+                    </form>
             </p>
         </div>
     </div>

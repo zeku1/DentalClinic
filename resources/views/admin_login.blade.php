@@ -126,7 +126,7 @@
             <img src="img/logo2.png" alt="Logo">
         </div>
 
-        <form  action="{{ secure_url('login.submit') }}" method="POST">
+        <form  action="{{ secure_url('/login') }}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="username">USERNAME:</label>
@@ -138,7 +138,7 @@
             </div>
             <div class="btn-container">
                 <input type="submit" class="btn btn-primary" value="Login">
-                <a href="/"> <button type="button" class="btn btn-secondary">Cancel</button></a>
+                <a href="{{secure_url('/')}}"> <button type="button" class="btn btn-secondary">Cancel</button></a>
             </div>
         </form>
     </div>

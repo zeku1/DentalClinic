@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form action="{{ secure_url('admin.procedures.store') }}" method="POST">
+<form action="{{ secure_url('admin/procedure/store') }}" method="POST">
     @csrf
     <fieldset>
         <legend>Add new Procedure</legend>
