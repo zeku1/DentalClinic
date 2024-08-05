@@ -3,7 +3,7 @@
 @section('content')
 
 <h1>Appointments</h1>
-<a href="{{route('appointment.create')}}"><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
+<a href="{{route('appointment.create')}}"><button class="btn btn-primary">
         ADD
     </button></a>
 <!-- Table for larger screens -->
