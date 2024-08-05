@@ -74,7 +74,7 @@
             <a class="nav-link" href="{{ route('admin.dentists') }}">Dentist</a>
             <a class="nav-link" href="{{ route('admin.schedule') }}">Schedule</a>
             <a class="nav-link" href="{{ route('admin.appointments') }}">Appointments</a>
-            <a class="nav-link" href="{{ route('admin.procedures') }}">Appointments</a>
+            <a class="nav-link" href="{{ route('admin.procedures') }}">Procedures</a>
             <a class="nav-link" href="{{ route('payment.index') }}">Payments</a>
         </nav>
     </div>
