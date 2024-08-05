@@ -44,7 +44,7 @@
                         approve
                     </button>
                     <!-- Delete Form -->
-                    <form action="{{secure_url('appointments/' .$appointment->id .'/delete')}}" method="POST" style="display:inline;">
+                    <form action="{{secure_url('appointments/' . $appointment->id . '/delete')}}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Remove</button>
@@ -61,7 +61,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form action="{{secure_url('admin/appointments/'.$appointment->id.'/approve')}}" method="POST" style="display:inline;">
+                            <form action="{{secure_url('admin/appointments/' . $appointment->id . '/approve')}}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('PUT')
 
